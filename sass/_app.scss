@@ -12,7 +12,7 @@ body {
     }
   }
   @include respond(phone) {
-    min-height: unset;
+    height: 100vh;
   }
 
   @include flex(unset, center) {
@@ -287,6 +287,15 @@ body {
     @include respond(phone) {
       justify-content: center;
       margin: 8rem 0 12.6rem;
+    }
+  }
+
+  &__close {
+    @include respond(phone) {
+      position: absolute;
+      bottom: 8rem;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 

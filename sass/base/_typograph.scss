@@ -29,12 +29,14 @@ body {
   font-weight: 600;
 }
 
-.modal-header {
-  @include mixins.respond(phone) {
-    font-size: 3.2rem;
+.modal {
+  &__header {
+    @include mixins.respond(phone) {
+      font-size: 3.2rem;
+    }
   }
-}
 
-.modal-title {
-  color: $score-value;
+  &__title {
+    color: $score-value;
+  }
 }

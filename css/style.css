@@ -53,12 +53,11 @@ body {
 }
 
 @media only screen and (max-width: 27em) {
-  .modal-header {
+  .modal__header {
     font-size: 3.2rem;
   }
 }
-
-.modal-title {
+.modal__title {
   color: #3b4363;
 }
 
@@ -90,7 +89,7 @@ body {
 }
 @media only screen and (max-width: 27em) {
   body {
-    min-height: unset;
+    height: 100vh;
   }
 }
 body.overlay::before {
@@ -360,6 +359,14 @@ body.overlay::before {
   .modal__header {
     justify-content: center;
     margin: 8rem 0 12.6rem;
+  }
+}
+@media only screen and (max-width: 27em) {
+  .modal__close {
+    position: absolute;
+    bottom: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 .modal__content {
