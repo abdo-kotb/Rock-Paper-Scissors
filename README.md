@@ -27,7 +27,7 @@ Users should be able to:
 #### Stage #1
 
 <p align="left">
-  <img align="left" width="600px" height="500px" src="https://user-images.githubusercontent.com/86558336/150134878-49ab2184-9a65-477d-aaf9-dfecf0214da7.png" />
+  <img align="left" width="500px" height="500px" src="https://user-images.githubusercontent.com/86558336/150134878-49ab2184-9a65-477d-aaf9-dfecf0214da7.png" />
 </p>
 <p align="right">
   <img width="300px" height="500px" src="https://user-images.githubusercontent.com/86558336/150135110-5ea1245c-aa39-4757-ab7e-f8ef7ec22b84.png" />
@@ -36,7 +36,7 @@ Users should be able to:
 #### Stage #2
 
 <p align="left">
-  <img align="left" width="600px" height="500px" src="https://user-images.githubusercontent.com/86558336/150137145-e31f3cce-b637-4728-8a61-91b905bab38b.png" />
+  <img align="left" width="500px" height="500px" src="https://user-images.githubusercontent.com/86558336/150137145-e31f3cce-b637-4728-8a61-91b905bab38b.png" />
 </p>
 <p align="right"> 
   <img width="300px" height="500px" src="https://user-images.githubusercontent.com/86558336/150137531-f2a33df1-a5df-44b6-ab6f-24a6b17dd298.png" />
@@ -45,7 +45,7 @@ Users should be able to:
 #### Stage #3
 
 <p align="left">
-  <img align="left" width="600px" height="500px" src="https://user-images.githubusercontent.com/86558336/150155611-8390139d-7df9-4520-88f9-78e78870e36f.png" />
+  <img align="left" width="500px" height="500px" src="https://user-images.githubusercontent.com/86558336/150155611-8390139d-7df9-4520-88f9-78e78870e36f.png" />
 </p>
 <p align="right"> 
   <img width="300px" height="500px" src="https://user-images.githubusercontent.com/86558336/150140204-c7d8dc1a-9884-4c09-9750-57a4f05df4c7.png" />
@@ -54,7 +54,7 @@ Users should be able to:
 #### Rules Modal
 
 <p align="left">
-  <img align="left" width="600px" height="500px" src="https://user-images.githubusercontent.com/86558336/150166003-2a317561-df43-4106-8e8f-8b0cba2a79f6.png" />
+  <img align="left" width="500px" height="500px" src="https://user-images.githubusercontent.com/86558336/150166003-2a317561-df43-4106-8e8f-8b0cba2a79f6.png" />
 </p>
 <p align="right"> 
   <img width="300px" height="500px" src="https://user-images.githubusercontent.com/86558336/150167846-c278aa2a-ef41-40e8-90c2-7fa9d3df9f2c.png" />
