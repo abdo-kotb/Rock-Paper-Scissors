@@ -37,10 +37,9 @@ gameContainer.addEventListener('click', function (e) {
 
   gameContainer.style.backgroundImage = 'unset';
   targetBtn.classList.add('user-picked');
+  targetBtn.removeAttribute('data-selected');
 
-  gameBtns.forEach(el => {
-    if (el !== targetBtn) el.remove();
-  });
+  gameBtns.forEach(el => el !== targetBtn && el.remove());
 
   mainGameProcess(selectedObj);
 });
