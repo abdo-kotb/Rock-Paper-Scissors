@@ -1,4 +1,4 @@
 const gameContainer = document.querySelector('.game-container');
-const scoreEl = document.querySelector('.score');
+const scoreEl = document.querySelector('.score__value');
 
 export { gameContainer, scoreEl };

@@ -5,15 +5,15 @@ const modalBtn = document.querySelector('.rules');
 const renderModal = function () {
   const html = `
     <div class="modal">
-      <div class="modal-header">
-        <h2 class="modal-title">Rules</h2>
-        <button class="modal-close btn" role="button" aria-label="close">
+      <div class="modal__header">
+        <h2 class="modal__title">Rules</h2>
+        <button class="modal__close btn" role="button" aria-label="close">
           <img src="images/icon-close.svg" alt="icon-close" />
         </button>
       </div>
-      <div class="modal-content">
+      <div class="modal__content">
         <img
-          class="modal-img"
+          class="modal__img"
           src="images/image-rules.svg"
           alt="rock beats scissors, scissors beat paper, paper beats rock"
         />
@@ -35,7 +35,7 @@ const closeModal = function (modal) {
 };
 
 const closeModalFromBtn = function (e) {
-  const closeBtn = e.target.closest('.modal-close');
+  const closeBtn = e.target.closest('.modal__close');
   if (!closeBtn) return;
 
   const modal = document.querySelector('.modal');

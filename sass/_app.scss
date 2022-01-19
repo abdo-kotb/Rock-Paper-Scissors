@@ -1,0 +1,329 @@
+@use './abstracts/variables' as *;
+@use './abstracts/mixins' as *;
+@use './base/animation' as *;
+
+body {
+  background-image: $body-bg;
+  height: 100vh;
+  @include respond(tablet) {
+    &,
+    &.overlay::before {
+      height: 130vh;
+    }
+  }
+  @include respond(phone) {
+    min-height: unset;
+  }
+
+  @include flex(unset, center) {
+    flex-direction: column;
+  }
+
+  &.overlay::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba($black, 0.5);
+    z-index: 999;
+    opacity: 0;
+    animation: $reset-opacity;
+  }
+}
+
+.header {
+  width: 60rem;
+  max-width: 90%;
+  @include flex(space-between, unset);
+  margin: 4.8rem 0 3.2rem;
+  padding: 2rem;
+  border: 2px solid $header-border;
+  border-radius: $radius-big;
+
+  @include respond(tablet) {
+    margin-bottom: 8rem;
+  }
+  @include respond(phone) {
+    align-items: center;
+  }
+}
+
+.score {
+  padding: 1.6rem 4.4rem 0;
+  height: 100%;
+  background-color: $white;
+  border-radius: $radius-big;
+  text-align: center;
+
+  @include respond(phone) {
+    height: fit-content;
+    padding-bottom: 1.6rem;
+  }
+}
+
+.main-container {
+  @include respond(tablet) {
+    max-width: 100%;
+  }
+}
+
+.game-container {
+  width: 50rem;
+  height: 25rem;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%);
+  background-image: url(../images/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position-x: 50%;
+  position: relative;
+
+  @include respond(tablet) {
+    max-width: 100%;
+  }
+}
+
+.part {
+  position: absolute;
+  @include flex(center, center);
+  background-color: rgba($white, 0.9);
+  width: 12.8rem;
+  height: 12.8rem;
+  border-radius: $radius-center;
+  transition: $big-transition;
+
+  &:not(.user-picked):not(.com-picked) {
+    cursor: pointer;
+
+    .game-part {
+      transition: $big-transition;
+    }
+
+    &:hover .game-part {
+      transform: scale(1.25) rotate(360deg);
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1.7rem;
+    left: -1.6rem;
+    width: calc(100% + 3.2rem);
+    height: calc(100% + 3.2rem);
+    border-radius: $radius-center;
+  }
+
+  &.user-picked {
+    left: $mainXdir;
+    top: 50%;
+    transform: translateY(-100%);
+    z-index: 2;
+
+    &::after {
+      content: 'YOU PICKED';
+      width: fit-content;
+    }
+  }
+
+  &.com-picked {
+    left: 85%;
+    top: 50%;
+    transform: translate(-100%, -100%);
+    background-color: $background-dark;
+    animation: pulse 1s linear 3;
+
+    &::after {
+      content: 'THE HOUSE PICKED';
+      width: 17rem;
+
+      @include respond(phone) {
+        width: 19rem;
+      }
+    }
+  }
+
+  &.user-picked::after,
+  &.com-picked::after {
+    position: absolute;
+    top: -6.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.paper-container {
+  top: $mainYdir;
+  left: $mainXdir;
+  transform: translateY(-50%);
+  @include part-shadow($paper-light);
+
+  &.won {
+    @include shadow-won($paper-light);
+  }
+
+  &::before {
+    @include shadow-before($paper-dark);
+  }
+}
+
+.scissors-container {
+  top: $mainYdir;
+  right: $mainXdir;
+  transform: translateY(-50%);
+  @include part-shadow($scissors-light);
+
+  &.won {
+    @include shadow-won($scissors-light);
+  }
+
+  &::before {
+    @include shadow-before($scissors-dark);
+  }
+
+  &.user-picked {
+    left: unset;
+    right: 85%;
+    transform: translate(100%, -100%);
+  }
+
+  &.com-picked {
+    right: 15%;
+  }
+}
+
+.rock-container {
+  bottom: $mainYdir;
+  left: 50%;
+  transform: translateX(-50%);
+  @include part-shadow($rock-light);
+
+  &.won {
+    @include shadow-won($rock-light);
+  }
+
+  &::before {
+    @include shadow-before($rock-dark);
+  }
+}
+
+.over {
+  & .user-picked {
+    left: -10%;
+    @include respond(phone) {
+      left: 15%;
+    }
+
+    &.scissors-container {
+      left: unset;
+      right: 110%;
+      @include respond(phone) {
+        left: unset;
+        right: 85%;
+      }
+    }
+  }
+
+  & .com-picked {
+    left: 110%;
+    @include respond(phone) {
+      left: unset;
+      left: 85%;
+    }
+  }
+}
+
+.rules {
+  padding: 0.8rem 2.8rem;
+  position: absolute;
+  right: 3.2rem;
+  bottom: 3.2rem;
+  border: 2px solid rgba($white, 0.5);
+  border-radius: $radius-small;
+  transition: $def-transition;
+
+  &:hover {
+    background-color: $white;
+    color: $background-dark;
+    transform: translateY(-1rem);
+    box-shadow: 0 1rem 1.6rem rgba($black, 0.5);
+  }
+
+  @include respond(tablet) {
+    left: 50%;
+    right: unset;
+    bottom: -25vh;
+    transform: translateX(-50%);
+  }
+  @include respond(phone) {
+    bottom: 4.8rem;
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $white;
+  padding: 2.4rem;
+  border-radius: $radius-big;
+  z-index: 1000;
+  opacity: 0;
+  animation: $reset-opacity;
+
+  @include respond(phone) {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__header {
+    @include flex(space-between, center);
+    margin-bottom: 3.6rem;
+
+    @include respond(phone) {
+      justify-content: center;
+      margin: 8rem 0 12.6rem;
+    }
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__img {
+    width: 90%;
+  }
+}
+
+.game-results {
+  position: absolute;
+  top: 6.4rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include flex(initial, center) {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  opacity: 0;
+  animation: resetOpacity ease-in 1s forwards;
+
+  @include respond(phone) {
+    top: unset;
+    bottom: -12.6rem;
+  }
+}
+
+.btn--white {
+  background-color: $white;
+  color: $background-dark;
+  padding: 1rem 4.8rem;
+  border-radius: $radius-big;
+  transition: 0.3s;
+  &:hover {
+    color: $rock-dark;
+  }
+}

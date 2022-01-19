@@ -1,0 +1,14 @@
+@keyframes resetOpacity {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  33% {
+    transform: translate(-100%, -100%) scale(1.1);
+  }
+  66% {
+    transform: translate(-100%, -100%) scale(0.9);
+  }
+}

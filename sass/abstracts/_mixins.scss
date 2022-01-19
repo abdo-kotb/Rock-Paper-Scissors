@@ -1,0 +1,37 @@
+@use './variables' as *;
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    //432px
+    @media only screen and (max-width: 27em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    //768px
+    @media only screen and (max-width: 48em) {
+      @content;
+    }
+  }
+}
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  @content;
+}
+
+@mixin part-shadow($color) {
+  box-shadow: inset 0 6px rgba($black, $part-inner-hue), 0 0 0 1.6rem $color;
+}
+@mixin shadow-before($color) {
+  box-shadow: 0 8px $color;
+}
+@mixin shadow-won($color) {
+  box-shadow: inset 0 6px rgba($black, $part-inner-hue), 0 0 0 1.6rem $color,
+    0 0.5rem 0 6.6rem rgba($white, $circle-alpha),
+    0 0.5rem 0 10.6rem rgba($white, $circle-alpha),
+    0 0.5rem 0 14.6rem rgba($white, $circle-alpha);
+}

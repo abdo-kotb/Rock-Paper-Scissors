@@ -1,0 +1,17 @@
+{
+  "name": "rock-paper-scissors-master",
+  "version": "1.0.0",
+  "description": "My solution to the Rock, Paper, Scissors challenge on Frontend Mentor",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass --watch sass/main.scss css/style.css",
+    "live": "live-server",
+    "start": "npm-run-all --parallel live watch:sass"
+  },
+  "author": "Abdulrhman Kotb",
+  "license": "MIT",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.49.0"
+  }
+}

@@ -1,0 +1,32 @@
+@use '../abstracts/mixins';
+
+* {
+  &,
+  &::before,
+  &::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+}
+
+html {
+  font-size: 62.5%;
+
+  @include mixins.respond(phone) {
+    font-size: 43.75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.btn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}

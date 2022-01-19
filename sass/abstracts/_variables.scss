@@ -1,0 +1,29 @@
+$background-light: hsl(214, 47%, 23%);
+$background-dark: hsl(237, 49%, 15%);
+$body-bg: radial-gradient(circle at top, $background-light, $background-dark);
+$header-border: hsl(217, 16%, 45%);
+$score-text: hsl(229, 64%, 46%);
+$score-value: hsl(229, 25%, 31%);
+$paper-light: hsl(230, 89%, 65%);
+$paper-dark: hsl(230, 89%, 62%);
+$scissors-light: hsl(40, 84%, 53%);
+$scissors-dark: hsl(39, 89%, 49%);
+$rock-light: hsl(349, 70%, 56%);
+$rock-dark: hsl(349, 71%, 52%);
+$white: #fff;
+$black: #000;
+
+$radius-big: 1.2rem;
+$radius-small: 0.7rem;
+$radius-center: 50%;
+
+$circle-alpha: 0.03;
+$part-inner-hue: 0.2;
+
+$mainXdir: 15%;
+$mainYdir: 0;
+
+$reset-opacity: resetOpacity 1.5s forwards;
+
+$def-transition: 0.3s;
+$big-transition: 1s;

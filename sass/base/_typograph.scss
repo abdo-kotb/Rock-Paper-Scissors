@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins';
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 1.6rem;
+  color: $white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.score {
+  &__text {
+    color: $score-text;
+    opacity: 0.9;
+  }
+  &__value {
+    color: $score-value;
+    font-size: 5rem;
+    font-weight: 700;
+    opacity: 0.9;
+  }
+}
+
+.rules {
+  color: inherit;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.modal-header {
+  @include mixins.respond(phone) {
+    font-size: 3.2rem;
+  }
+}
+
+.modal-title {
+  color: $score-value;
+}
